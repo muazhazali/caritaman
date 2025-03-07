@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { cn } from "@/lib/utils"
-import { Bike, SkullIcon as Skateboard, ShoppingBasketIcon as Basketball, MonitorIcon as Running } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
+import {
+  Bike,
+  SkullIcon as Skateboard,
+  ShoppingBasketIcon as Basketball,
+  MonitorIcon as Running,
+} from "lucide-react";
 
 const sports = [
   {
@@ -26,7 +31,7 @@ const sports = [
     name: "Cycling",
     icon: Bike,
   },
-]
+];
 
 export function SportFilter() {
   return (
@@ -36,7 +41,10 @@ export function SportFilter() {
           <Button
             key={sport.name}
             variant="ghost"
-            className={cn("flex items-center space-x-2", sport.name === "All" && "bg-orange-100 dark:bg-orange-900")}
+            className={cn(
+              "flex items-center space-x-2",
+              sport.name === "All" && "bg-orange-100 dark:bg-orange-900"
+            )}
           >
             {sport.icon && <sport.icon className="h-4 w-4" />}
             <span>{sport.name}</span>
@@ -45,6 +53,5 @@ export function SportFilter() {
       </div>
       <ScrollBar orientation="horizontal" className="invisible" />
     </ScrollArea>
-  )
+  );
 }
-
